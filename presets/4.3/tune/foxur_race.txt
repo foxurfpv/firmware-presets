@@ -78,13 +78,8 @@ set feedforward_boost = 12
     set motor_pwm_protocol = Dshot300
 #$ OPTION END
 
-#$ OPTION BEGIN (UNCHECKED): Min/max check 1000/2000
-    set min_check = 1000
-    set max_check = 2000
-#$ OPTION END
-
 #$ OPTION_GROUP BEGIN: Filter presets
-    #$ OPTION BEGIN (UNCHECKED): Karate Array
+    #$ OPTION BEGIN (CHECKED): Karate Array
         #$ INCLUDE: presets/4.3/filters/karate_array.txt
     #$ OPTION END
 
@@ -94,11 +89,11 @@ set feedforward_boost = 12
 #$ OPTION_GROUP END
 
 #$ OPTION_GROUP BEGIN: Motor KV
-    #$ OPTION BEGIN (UNCHECKED): 2020kv
+    #$ OPTION BEGIN (CHECKED): 2020KV+
         set tpa_breakpoint = 1250
     #$ OPTION END
 
-    #$ OPTION BEGIN (UNCHECKED): 1950kv
+    #$ OPTION BEGIN (UNCHECKED): 1950KV
         set tpa_breakpoint = 1300
         set thrust_linear = 20
     #$ OPTION END
@@ -117,6 +112,11 @@ set feedforward_boost = 12
         #$ INCLUDE: presets/4.3/rc_link/generic/500hz_race.txt
     #$ OPTION END
 #$ OPTION_GROUP END
+
+#$ OPTION BEGIN (UNCHECKED): Min/max check 1000/2000
+    set min_check = 1000
+    set max_check = 2000
+#$ OPTION END
 
 #$ OPTION BEGIN (UNCHECKED): Foxur rates
     #$ INCLUDE: presets/4.3/rates/Foxur.txt
