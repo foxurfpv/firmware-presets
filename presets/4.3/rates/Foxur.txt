@@ -3,7 +3,7 @@
 #$ FIRMWARE_VERSION: 4.4
 #$ CATEGORY: RATES
 #$ STATUS: COMMUNITY
-#$ KEYWORDS: youtube, foxur, foxurfpv
+#$ KEYWORDS: foxur, foxurfpv, 2023
 #$ AUTHOR: Foxur
 #$ DESCRIPTION: Racing rates with 700 deg/sec across all axis.
 #$ INCLUDE: presets/4.3/rates/defaults.txt

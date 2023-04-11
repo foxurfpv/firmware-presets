@@ -2,13 +2,15 @@
 #$ FIRMWARE_VERSION: 4.4
 #$ CATEGORY: TUNE
 #$ STATUS: EXPERIMENTAL
-#$ KEYWORDS: 6S, race, foxur, 2023
+#$ KEYWORDS: 6S, race, foxur, foxurfpv, 2023
 #$ AUTHOR: Foxur
 
+#$ PARSER: MARKED
+
 #$ DESCRIPTION:
-#$ DESCRIPTION: This tune combines the PIDs from MCK Preset with Karate Array filters
-#$ DESCRIPTION: <br>**YOU HAVE TO USE RPM FILTERING WITH THIS TUNE!**
-#$ DESCRIPTION: <br>Failure to do so might result in fire 🔥
+#$ DESCRIPTION: This tune is a modified version of the PIDs from MCK Preset tune
+#$ DESCRIPTION: **YOU HAVE TO USE RPM FILTERING WITH THIS TUNE!**
+#$ DESCRIPTION: Tested on PWM Frequency 48 and Motor Timing 30
 #$ DESCRIPTION:
 #$ DESCRIPTION: ## Foxur setup:
 #$ DESCRIPTION: - Korsair Reaper v2 Frame
@@ -29,28 +31,6 @@
 #$ INCLUDE: presets/4.3/filters/defaults.txt
 
 set motor_pwm_protocol = DSHOT600
-
-# -- Gyro lowpass filters --
-set gyro_lpf1_static_hz = 0
-set gyro_lpf1_dyn_min_hz = 0
-set simplified_gyro_filter = OFF
-
-# -- Gyro Dynamic Notches --
-set dyn_notch_count = 2
-set dyn_notch_q = 500
-set dyn_notch_min_hz = 200
-
-# -- RPM filtering --
-set dshot_bidir = ON
-set rpm_filter_harmonics = 2
-set rpm_filter_fade_range_hz = 100
-set rpm_filter_min_hz = 150
-
-# -- Dterm filtering --
-set dterm_lpf1_dyn_expo = 7
-
-# not needed, but to be authentic:
-set simplified_dterm_filter_multiplier = 200
 
 # -- Throttle boost
 set throttle_boost = 2
@@ -102,6 +82,27 @@ set feedforward_boost = 12
     set min_check = 1000
     set max_check = 2000
 #$ OPTION END
+
+#$ OPTION_GROUP BEGIN: Filter presets
+    #$ OPTION BEGIN (UNCHECKED): Karate Array
+        #$ INCLUDE: presets/4.3/filters/karate_array.txt
+    #$ OPTION END
+
+    #$ OPTION BEGIN (UNCHECKED): Ctzsnooze Race
+        #$ INCLUDE: presets/4.3/filters/ctzsnooze_race.txt
+    #$ OPTION END
+#$ OPTION_GROUP END
+
+#$ OPTION_GROUP BEGIN: Motor KV
+    #$ OPTION BEGIN (UNCHECKED): 2020kv
+        set tpa_breakpoint = 1250
+    #$ OPTION END
+
+    #$ OPTION BEGIN (UNCHECKED): 1950kv
+        set tpa_breakpoint = 1300
+        set thrust_linear = 20
+    #$ OPTION END
+#$ OPTION_GROUP END
 
 #$ OPTION_GROUP BEGIN: Some racing RC_LINK presets
     #$ OPTION BEGIN (UNCHECKED): 150hz link

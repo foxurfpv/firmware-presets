@@ -2798,7 +2798,7 @@
     },
     {
       "fullPath": "presets/4.3/tune/foxur_race.txt",
-      "hash": "8c18685e7d996245c4437553edc767c07ef8b32375a69274a23921a74b262d7a",
+      "hash": "bb2a977e6b2a187feb7b5b98a22ea4ccc1457fb68ae1f67bfdf2c22bcf196e58",
       "title": "Foxur 2023 Race 6s 5\"",
       "firmware_version": [
         "4.3"
@@ -3864,7 +3864,7 @@
     },
     {
       "fullPath": "presets/4.4/tune/foxur_race.txt",
-      "hash": "53bbffaca63ef2c64684b6c18456487a7791ff5b368e0f20f4702c1017427ae6",
+      "hash": "c4d8c13eb11196af9e7720f395a9ac7d89359b5fa7bd7bb944039d4a8869db5d",
       "title": "Foxur 2023 Race 6s 5\"",
       "firmware_version": [
         "4.4"
