@@ -5,8 +5,6 @@
 #$ KEYWORDS: 6S, race, foxur, 2023
 #$ AUTHOR: Foxur
 
-#$ PARSER: MARKED
-
 #$ DESCRIPTION:
 #$ DESCRIPTION: This tune combines the PIDs from MCK Preset with Karate Array filters
 #$ DESCRIPTION: <br>**YOU HAVE TO USE RPM FILTERING WITH THIS TUNE!**
