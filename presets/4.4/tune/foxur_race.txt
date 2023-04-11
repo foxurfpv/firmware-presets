@@ -1,0 +1,124 @@
+#$ TITLE: Foxur 2023 Race 6s 5"
+#$ FIRMWARE_VERSION: 4.4
+#$ CATEGORY: TUNE
+#$ STATUS: EXPERIMENTAL
+#$ KEYWORDS: 6S, race, foxur, 2023
+#$ AUTHOR: Foxur
+
+#$ PARSER: MARKED
+
+#$ DESCRIPTION:
+#$ DESCRIPTION: This tune combines the PIDs from MCK Preset with Karate Array filters
+#$ DESCRIPTION: <br>**YOU HAVE TO USE RPM FILTERING WITH THIS TUNE!**
+#$ DESCRIPTION: <br>Failure to do so might result in fire 🔥
+#$ DESCRIPTION:
+#$ DESCRIPTION: ## Foxur setup:
+#$ DESCRIPTION: - Korsair Reaper v2 Frame
+#$ DESCRIPTION: - Foxeer Predator V5
+#$ DESCRIPTION: - T-Motor F60Pro LV 2020KV
+#$ DESCRIPTION: - HGLRC F722 (20x20)
+#$ DESCRIPTION: - Hobbywing 40A
+#$ DESCRIPTION: - Gemfan MCK 51466 V2
+#$ DESCRIPTION: - TBS Unify Antenna
+#$ DESCRIPTION: - TBS Unify Pro32 Nano VTx
+#$ DESCRIPTION: - TBS Tracer
+#$ DESCRIPTION: - Radiomaster TX16S
+#$ DESCRIPTION:
+
+#$ INCLUDE_WARNING: misc/warnings/en/dshot.txt
+#$ INCLUDE_WARNING: misc/warnings/en/rpm_filters.txt
+#$ INCLUDE: presets/4.4/tune/defaults.txt
+#$ INCLUDE: presets/4.3/filters/defaults.txt
+
+set motor_pwm_protocol = DSHOT600
+
+# -- Gyro lowpass filters --
+set gyro_lpf1_static_hz = 0
+set gyro_lpf1_dyn_min_hz = 0
+set simplified_gyro_filter = OFF
+
+# -- Gyro Dynamic Notches --
+set dyn_notch_count = 2
+set dyn_notch_q = 500
+set dyn_notch_min_hz = 200
+
+# -- RPM filtering --
+set dshot_bidir = ON
+set rpm_filter_harmonics = 2
+set rpm_filter_fade_range_hz = 100
+set rpm_filter_min_hz = 150
+
+# -- Dterm filtering --
+set dterm_lpf1_dyn_expo = 7
+
+# not needed, but to be authentic:
+set simplified_dterm_filter_multiplier = 200
+
+# -- Throttle boost
+set throttle_boost = 2
+
+# -- Yaw lowpass --
+set yaw_lowpass_hz = 0
+
+# -- iTerm  --
+set iterm_relax_cutoff = 20
+set iterm_limit = 500
+
+# -- PIDsum limits --
+set pidsum_limit_yaw = 1000
+
+# -- PID values --
+set simplified_pids_mode = OFF
+set p_pitch = 45
+set i_pitch = 92
+set d_pitch = 40
+set f_pitch = 100
+set p_roll = 43
+set i_roll = 90
+set d_roll = 37
+set f_roll = 100
+set p_yaw = 38
+set i_yaw = 85
+set f_yaw = 100
+set d_min_roll = 20
+set d_min_pitch = 22
+set d_max_gain = 25
+set d_max_advance = 0
+
+# -- TPA --
+set tpa_rate = 60
+set tpa_breakpoint = 1300
+
+# -- Antigravity --
+set anti_gravity_gain = 45
+
+# -- Feedforward --
+set feedforward_max_rate_limit = 100
+set feedforward_boost = 12
+
+#$ OPTION BEGIN (UNCHECKED): Dshot300 (F4 or BMI)
+    set motor_pwm_protocol = Dshot300
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): Min/max check 1000/2000
+    set min_check = 1000
+    set max_check = 2000
+#$ OPTION END
+
+#$ OPTION_GROUP BEGIN: Some racing RC_LINK presets
+    #$ OPTION BEGIN (UNCHECKED): 150hz link
+        #$ INCLUDE: presets/4.3/rc_link/generic/150hz_race.txt
+    #$ OPTION END
+
+    #$ OPTION BEGIN (UNCHECKED): 250hz link
+        #$ INCLUDE: presets/4.3/rc_link/generic/250hz_race.txt
+    #$ OPTION END
+
+    #$ OPTION BEGIN (UNCHECKED): 500hz link
+        #$ INCLUDE: presets/4.3/rc_link/generic/500hz_race.txt
+    #$ OPTION END
+#$ OPTION_GROUP END
+
+#$ OPTION BEGIN (UNCHECKED): Foxur rates
+    #$ INCLUDE: presets/4.3/rates/Foxur.txt
+#$ OPTION END
