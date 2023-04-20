@@ -26,7 +26,7 @@
 
 #$ INCLUDE_WARNING: misc/warnings/en/dshot.txt
 #$ INCLUDE_WARNING: misc/warnings/en/rpm_filters.txt
-#$ INCLUDE: presets/4.4/tune/defaults.txt
+#$ INCLUDE: presets/4.3/tune/defaults.txt
 #$ INCLUDE: presets/4.3/filters/defaults.txt
 
 set motor_pwm_protocol = DSHOT600
